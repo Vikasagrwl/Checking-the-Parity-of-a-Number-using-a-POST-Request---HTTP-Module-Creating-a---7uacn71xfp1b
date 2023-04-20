@@ -18,8 +18,13 @@ const server = http.createServer((req, res) => {
         } else{
           result = 'odd';
         }
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ result: result }));
+        if(result === 'even'){
+          res.writeHead(200, { 'Content-Type': 'plain-text' });
+          res.end('The number 2 is even');
+        } else{
+          res.writeHead(404, { 'Content-Type': 'plain-text' });
+          res.end('The number is odd');
+        }
       } else {
         res.writeHead(400, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'Invalid number' }));
