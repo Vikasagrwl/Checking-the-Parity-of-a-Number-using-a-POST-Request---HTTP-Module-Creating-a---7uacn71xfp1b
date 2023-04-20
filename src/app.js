@@ -20,10 +20,10 @@ const server = http.createServer((req, res) => {
         }
         if(result === 'even'){
           res.writeHead(200, { 'Content-Type': 'text/plain' });
-          res.end(`'The number ${value} is even'`);
+          res.end(`The number ${value} is even`);
         } else{
           res.writeHead(404, { 'Content-Type': 'text/plain' });
-          res.end(`'The number ${value} is odd'`);
+          res.end(`The number ${value} is odd`);
         }
       } else {
         res.writeHead(400, { 'Content-Type': 'text/plain' });
