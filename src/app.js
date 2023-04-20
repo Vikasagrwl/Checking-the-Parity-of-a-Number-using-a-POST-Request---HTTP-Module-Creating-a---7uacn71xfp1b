@@ -19,14 +19,14 @@ const server = http.createServer((req, res) => {
           result = 'odd';
         }
         if(result === 'even'){
-          res.writeHead(200, { 'Content-Type': 'plain-text' });
+          res.writeHead(200, { 'Content-Type': 'text/plain' });
           res.end('The number 2 is even');
         } else{
-          res.writeHead(404, { 'Content-Type': 'plain-text' });
+          res.writeHead(404, { 'Content-Type': 'text/plain' });
           res.end('The number is odd');
         }
       } else {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.writeHead(400, { 'Content-Type': 'text/plain' });
         res.end(JSON.stringify({ error: 'Invalid number' }));
       }
       // Write the code here to check if the number is odd or even
